@@ -1,0 +1,14 @@
+{
+  "name": "webt-core-working-with-json-server-responses-in-javascript",
+  "version": "1.0.0",
+  "description": "The wedding company \"Lords of the Rings\" would like to make it easier for customers planning a wedding to choose a registry office. Under the motto \"Happy choice\", it should be possible for customers to be suggested a random registry office in Vienna.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

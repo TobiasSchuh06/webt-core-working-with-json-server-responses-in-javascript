@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBT | CORE | Working with JSON Server Responses in JavaScript</title>
+    <link rel="stylesheet" href="main.css">
+<script>
+    let arr = [];
+    fetch('https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:TRAUMHOCHZEITOGD&srsName=EPSG:4326&outputFormat=json')
+    .then(response => response.json())
+    .then(json => arr = json.features);
+    function getRandomWeddingLocation(){
+        document.querySelector("#container").style.display = "block";
+        document.querySelector("#name").innerHTML = "Name: " + JSON.stringify(arr[Math.floor(Math.random() * arr.length)].properties.LOCATION, null, 2);
+        document.querySelector("#address").innerHTML = "Addresse: " + JSON.stringify(arr[Math.floor(Math.random() * arr.length)].properties.ADRESSE, null, 2);
+        document.querySelector("#email").innerHTML = "Email: " + JSON.stringify(arr[Math.floor(Math.random() * arr.length)].properties.EMAIL, null, 2);
+    }
+</script>
+</head>
+<body>
+<button onclick="getRandomWeddingLocation()">bekomme eine zufällige Hochzeitslocation</button>
+<div id="faker">
+    <div id="container">
+        <p id="name"></p>
+        <p id="address"></p>
+        <p id="email"></p>
+    </div>
+</div>
+</body>
+</html>

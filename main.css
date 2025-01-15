@@ -108,3 +108,8 @@ body{
 #undo:hover {
     background: #85363A;
 }
+img{
+    border: 5px solid #742529;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
